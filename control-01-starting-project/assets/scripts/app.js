@@ -30,6 +30,7 @@ function writeToLog(
 }
 
 function calculateResult(calculationType) {
+  const enteredNumber = getUserNumberInput();
   if (
     (calculationType !== "ADD" &&
       calculationType !== "SUBTRACT" &&
