@@ -21,7 +21,8 @@
 // console.log(name, hobbies);
 
 // greet();
+"use strict";
 
-let userName = "James";
+const userName = "James";
 
 console.log(userName);
