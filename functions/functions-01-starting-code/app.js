@@ -21,7 +21,7 @@ const getPlayerChoice = () => {
     selection !== "SCISSORS"
   ) {
     alert(`Invalid choice! We chose ${ROCK} for you.`);
-    return DEFAULT_USER_CHOICE;
+    return;
   }
   return selection;
 };
@@ -37,7 +37,7 @@ const getComputerChoice = () => {
   }
 };
 
-const determineWinner = (cChoice, pChoice) =>
+const determineWinner = (cChoice, pChoice = DEFAULT_USER_CHOICE) =>
   cChoice === pChoice
     ? RESULT_DRAW
     : (cChoice === ROCK && pChoice === PAPER) ||
@@ -66,8 +66,14 @@ startGameBtn.addEventListener("click", () => {
   console.log("Game is starting...");
   const playerChoice = getPlayerChoice();
   const computerChoice = getComputerChoice();
-  const winner = determineWinner(computerChoice, playerChoice);
-  let message = `You picked ${playerChoice}, computer picked ${computerChoice}, therefore you `;
+  if (playerChoice) {
+    winner = determineWinner(computerChoice, playerChoice);
+  } else {
+    winner = determineWinner(computerChoice);
+  }
+  let message = `You picked ${
+    playerChoice || DEFAULT_USER_CHOICE
+  }, computer picked ${computerChoice}, therefore you `;
   if (winner === RESULT_DRAW) {
     message = message + "had a draw.";
   } else if (winner === RESULT_PLAYER_WINS) {
