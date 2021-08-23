@@ -46,9 +46,9 @@ function calculate(operation) {
   } else {
     currentResult /= enteredNumber;
     operator = "/";
-    createAndWriteOutput(operator, initialResult, enteredNumber);
-    writeToLog(operation, initialResult, enteredNumber, currentResult);
   }
+  createAndWriteOutput(operator, initialResult, enteredNumber);
+  writeToLog(operation, initialResult, enteredNumber, currentResult);
 }
 
 addBtn.addEventListener("click", calculate.bind(this, "ADD"));
