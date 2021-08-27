@@ -30,3 +30,14 @@ console.log(numbers);
 // }
 
 // console.log(personalData[1]);
+
+const hobbies = ["Sports", "Cooking"];
+hobbies.push("Snorkeling"); // adds element to end of array
+const poppedValue = hobbies.pop(); // removes last element of array
+hobbies.unshift("Coding"); // adds element to start of array
+hobbies.shift(); // removes first element of array
+console.log(hobbies);
+
+hobbies[1] = "Coding";
+hobbies[5] = "Reading";
+console.log(hobbies[4]);
