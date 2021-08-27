@@ -102,7 +102,6 @@ const taxAdjustedPrices = prices.map((price, idx, prices) => {
 });
 
 // console.log(prices, taxAdjustedPrices);
-
 const sortedPrices = prices.sort((a, b) => {
   if (a > b) {
     return 1;
@@ -116,8 +115,7 @@ const sortedPrices = prices.sort((a, b) => {
 // console.log(sortedPrices.reverse());
 console.log(sortedPrices);
 
-const filteredArray = prices.filter((price, idx, prices) => {
-  return price > 6;
-});
+// shortest ver!!
+const filteredArray = prices.filter((p) => p > 6);
 
 console.log(filteredArray);
