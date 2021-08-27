@@ -55,3 +55,8 @@ const storedResults = testResults.concat([3.99, 2]);
 testResults.push(5.91);
 
 console.log(storedResults, testResults);
+// console.log(testResults.indexOf(1.5));
+console.log(testResults.lastIndexOf(10.99));
+
+const personData = [{ name: "James" }, { name: "Marina" }];
+console.log(personData.indexOf({ name: "Marina" }));
