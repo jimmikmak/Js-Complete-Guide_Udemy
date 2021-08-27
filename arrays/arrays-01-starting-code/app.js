@@ -131,3 +131,12 @@ console.log(filteredArray);
 const sum = prices.reduce((preValue, curValue) => preValue + curValue, 0);
 
 console.log(sum);
+
+// combining map() and reduce()
+const originalArray = [{ price: 10.99 }, { price: 5.99 }, { price: 29.99 }];
+const transformedArray = originalArray.map((obj) => obj.price); // produces [10.99, 5.99, 29.99]
+const sum = transformedArray.reduce((sumVal, curVal) => sumVal + curVal, 0); // => 46.97
+
+// adding extraction logic with reduce()
+const originalArray = [{ price: 10.99 }, { price: 5.99 }, { price: 29.99 }];
+const sum = originalArray.reduce((sumVal, curVal) => sumVal + curVal.price, 0); // => 46.97
