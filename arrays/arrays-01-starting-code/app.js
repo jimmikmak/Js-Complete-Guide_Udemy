@@ -9,8 +9,24 @@ console.log(numbers);
 // const yetMoreNumbers = Array.of(1, 3);
 // console.log(yetMoreNumbers);
 
-const listItems = document.querySelectorAll("li");
-console.log(listItems);
+// const listItems = document.querySelectorAll("li");
+// console.log(listItems);
 
-const arrayListItems = Array.from(listItems);
-console.log(arrayListItems);
+// const arrayListItems = Array.from(listItems);
+// console.log(arrayListItems);
+
+// const hobbies = ["Cooking", "Sports"];
+// const personalData = [30, "James", { moreDetail: [] }];
+
+// const analyticsData = [
+//   [1, 1.6],
+//   [-5.4, 2.1],
+// ];
+
+// for (const data of analyticsData) {
+//   for (const dataPoint of data) {
+//     console.log(dataPoint);
+//   }
+// }
+
+// console.log(personalData[1]);
