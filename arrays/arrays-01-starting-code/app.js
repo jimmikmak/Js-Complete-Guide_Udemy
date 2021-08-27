@@ -119,3 +119,15 @@ console.log(sortedPrices);
 const filteredArray = prices.filter((p) => p > 6);
 
 console.log(filteredArray);
+
+// let sum = 0;
+
+// prices.forEach((price) => {
+//   sum += price;
+// });
+
+// console.log(sum);
+
+const sum = prices.reduce((preValue, curValue) => preValue + curValue, 0);
+
+console.log(sum);
