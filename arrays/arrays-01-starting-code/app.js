@@ -60,3 +60,17 @@ console.log(testResults.lastIndexOf(10.99));
 
 const personData = [{ name: "James" }, { name: "Marina" }];
 console.log(personData.indexOf({ name: "Marina" }));
+
+const marina = personData.find((person, index, persons) => {
+  return person.name === "Marina";
+});
+
+marina.name = "Jack";
+
+console.log(marina, personData);
+
+const jamesIndex = personData.findIndex((person, index, persons) => {
+  return person.name === "James";
+});
+
+console.log(jamesIndex);
