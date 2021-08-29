@@ -1,5 +1,5 @@
-const numbers = [1, 2, 3];
-console.log(numbers);
+// const numbers = [1, 2, 3];
+// console.log(numbers);
 
 // less common ways of creating arrays
 
@@ -135,8 +135,19 @@ console.log(sum);
 // combining map() and reduce()
 const originalArray = [{ price: 10.99 }, { price: 5.99 }, { price: 29.99 }];
 const transformedArray = originalArray.map((obj) => obj.price); // produces [10.99, 5.99, 29.99]
-const sum = transformedArray.reduce((sumVal, curVal) => sumVal + curVal, 0); // => 46.97
+// const sum = transformedArray.reduce((sumVal, curVal) => sumVal + curVal, 0); // => 46.97
 
 // adding extraction logic with reduce()
-const originalArray = [{ price: 10.99 }, { price: 5.99 }, { price: 29.99 }];
-const sum = originalArray.reduce((sumVal, curVal) => sumVal + curVal.price, 0); // => 46.97
+// const originalArray = [{ price: 10.99 }, { price: 5.99 }, { price: 29.99 }];
+// const sum = originalArray.reduce((sumVal, curVal) => sumVal + curVal.price, 0); // => 46.97
+
+// split() & join() methods ->
+const data = "new york;10.99;2000";
+
+const transformedData = data.split(";");
+transformedData[1] = +transformedData[1];
+console.log(transformedData);
+
+const nameFragments = ["Jimmy", "Mac"];
+const name = nameFragments.join(" ");
+console.log(name);
