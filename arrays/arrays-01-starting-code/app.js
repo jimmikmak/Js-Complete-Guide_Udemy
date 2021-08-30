@@ -151,3 +151,24 @@ console.log(transformedData);
 const nameFragments = ["Jimmy", "Mac"];
 const name = nameFragments.join(" ");
 console.log(name);
+
+// the spread operator
+const copiedNamedFragments = [...nameFragments];
+nameFragments.push("Mr");
+console.log(nameFragments, copiedNamedFragments);
+
+console.log(Math.min(...prices));
+
+const persons = [
+  { name: "James", age: 43 },
+  { name: "Jimmy", age: 42 },
+];
+const copiedPersons = persons.map((person) => ({
+  name: person.name,
+  age: person.age,
+}));
+
+persons.push({ name: "Marina", age: 38 });
+persons[0].age = 44;
+
+console.log(persons, copiedPersons);
