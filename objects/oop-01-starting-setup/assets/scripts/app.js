@@ -1,19 +1,31 @@
+class Product {
+  title = "DEFAULT";
+  imageUrl;
+  description;
+  price;
+
+  constructor(title, image, description, price) {
+    this.title = title;
+    this.imageUrl = image;
+    this.description = description;
+    this.price = price;
+  }
+}
+
 const productList = {
   products: [
-    {
-      title: "A Pillow",
-      imageUrl:
-        "https://images-na.ssl-images-amazon.com/images/I/71h8Q1lPl7L._AC_UL330_SR330,330_.jpg",
-      price: 19.99,
-      description: "A soft pillow",
-    },
-    {
-      title: "A Rug",
-      imageUrl:
-        "https://img.zcdn.com.au/lf/50/hash/38080/19150627/4/Silver-Harlo-Shag-Rug.jpg",
-      price: 69.99,
-      description: "A shag rug",
-    },
+    new Product(
+      "A Pilow",
+      "https://images-na.ssl-images-amazon.com/images/I/71h8Q1lPl7L._AC_UL330_SR330,330_.jpg",
+      "A soft pillow",
+      19.99
+    ),
+    new Product(
+      "A Rug",
+      "https://img.zcdn.com.au/lf/50/hash/38080/19150627/4/Silver-Harlo-Shag-Rug.jpg",
+      "A shag rug",
+      69.99
+    ),
   ],
   render() {
     const renderHook = document.getElementById("app");
