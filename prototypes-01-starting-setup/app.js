@@ -1,36 +1,45 @@
-// class ElderlyPerson {
-//   printAge() {
-//     console.log(this.age);
-//   }
-// }
-// class Person extends ElderlyPerson {
-//   name = "James";
+class ElderlyPerson {
+  printAge() {
+    console.log(this.age);
+  }
+}
+class Person {
+  name = "James";
 
-//   constructor() {
-//     super();
-//     this.age = 43;
-//   }
+  constructor() {
+    // super();
+    this.age = 43;
+    // this.greet = function() {...}
+  }
 
-//   greet() {
-//     console.log(
-//       "Hi, I am " + this.name + " and I am " + this.age + " years old."
-//     );
-//   }
-// }
+  // greet = () => {
+  //   console.log(
+  //     "Hi, I am " + this.name + " and I am " + this.age + " years old."
+  //   );
+  // };
 
-function Person() {
-  this.age = 43;
-  this.name = "James";
-  this.greet = function () {
+  greet() {
     console.log(
       "Hi, I am " + this.name + " and I am " + this.age + " years old."
     );
-  };
+  }
 }
 
-Person.describe = function () {
-  console.log("Creating persons...");
-};
+// function Person() {
+//   this.age = 43;
+//   this.name = "James";
+//   // this.greet = function() {...}
+// }
+
+// Person.prototype.greet = function () {
+//   console.log(
+//     "Hi, I am " + this.name + " and I am " + this.age + " years old."
+//   );
+// };
+
+// Person.describe = function () {
+//   console.log("Creating persons...");
+// };
 
 // Person.prototype = {
 //   printAge() {
@@ -38,16 +47,24 @@ Person.describe = function () {
 //   },
 // };
 
-Person.prototype.printAge = function () {
-  console.log(this.age);
-};
+// Person.prototype.printAge = function () {
+//   console.log(this.age);
+// };
 
-console.dir(Person);
+// console.dir(Person);
+
+// const p = new Person();
+// p.greet();
+// p.printAge();
+// console.log(p.length);
+// console.log(p.toString());
+// const p2 = new p.__proto__.constructor();
+// console.dir(Object.prototype);
 
 const p = new Person();
+const p2 = new Person();
 p.greet();
-p.printAge();
-console.log(p.length);
-console.log(p.toString());
-const p2 = new p.__proto__.constructor();
-console.dir(Object.prototype);
+console.log(p);
+
+const button = document.getElementById("btn");
+button.addEventListener("click", p.greet.bind(p));
