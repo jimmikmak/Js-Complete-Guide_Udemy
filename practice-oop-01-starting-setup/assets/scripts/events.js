@@ -1,94 +1,94 @@
-const button = document.querySelector("button");
+// const button = document.querySelector("button");
 
-// button.onclick = function () {
+// // button.onclick = function () {
 
+// // };
+
+// const buttonClickHandler = (e) => {
+//   // e.target.disabled = true;
+//   console.log(e);
 // };
 
-const buttonClickHandler = (e) => {
-  // e.target.disabled = true;
-  console.log(e);
-};
+// const anotherButtonClickHandler = () => {
+//   console.log("This was clicked...");
+// };
 
-const anotherButtonClickHandler = () => {
-  console.log("This was clicked...");
-};
+// // button.onclick = buttonClickHandler;
+// // button.onclick = anotherButtonClickHandler;
 
-// button.onclick = buttonClickHandler;
-// button.onclick = anotherButtonClickHandler;
+// const boundFn = buttonClickHandler.bind(this);
 
-const boundFn = buttonClickHandler.bind(this);
+// // button.addEventListener("click", buttonClickHandler);
 
-// button.addEventListener("click", buttonClickHandler);
+// // setTimeout(() => {
+// //   button.removeEventListener("click", buttonClickHandler);
+// // }, 2000);
 
-// setTimeout(() => {
-//   button.removeEventListener("click", buttonClickHandler);
-// }, 2000);
+// // buttons.forEach((btn) => {
+// //   btn.addEventListener("mouseenter", buttonClickHandler);
+// // });
 
-// buttons.forEach((btn) => {
-//   btn.addEventListener("mouseenter", buttonClickHandler);
-// });
+// // window.addEventListener("scroll", (e) => {
+// //   console.log(e);
+// // });
 
-// window.addEventListener("scroll", (e) => {
+// const form = document.querySelector("form");
+
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
 //   console.log(e);
 // });
 
-const form = document.querySelector("form");
+// const div = document.querySelector("div");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  console.log(e);
-});
+// div.addEventListener(
+//   "mouseenter",
+//   (e) => {
+//     console.log("CLICKED DIV");
+//     console.log(e);
+//   },
+//   true
+// );
 
-const div = document.querySelector("div");
-
-div.addEventListener(
-  "mouseenter",
-  (e) => {
-    console.log("CLICKED DIV");
-    console.log(e);
-  },
-  true
-);
-
-button.addEventListener("click", function (e) {
-  e.stopPropagation();
-  // e.stopImmediatePropagation();
-  console.log("CLICKED BUTTON");
-  console.log(e);
-  console.log(this);
-});
-
-const listItems = document.querySelectorAll("li");
-const list = document.querySelector("ul");
-
-// listItems.forEach((listItem) => {
-//   listItem.addEventListener("click", (e) => {
-//     e.target.classList.toggle("highlight");
-//   });
+// button.addEventListener("click", function (e) {
+//   e.stopPropagation();
+//   // e.stopImmediatePropagation();
+//   console.log("CLICKED BUTTON");
+//   console.log(e);
+//   console.log(this);
 // });
 
-// PERFECT event delegation pattern!!! ->
-list.addEventListener("click", function (e) {
-  // console.log(e.currentTarget);
-  // e.target.classList.toggle("highlight");
-  e.target.closest("li").classList.toggle("highlight");
-  // form.submit();
-  button.click();
-  console.log(this);
-});
+// const listItems = document.querySelectorAll("li");
+// const list = document.querySelector("ul");
 
-// Infinite scroll example ->
-let curElementNumber = 0;
+// // listItems.forEach((listItem) => {
+// //   listItem.addEventListener("click", (e) => {
+// //     e.target.classList.toggle("highlight");
+// //   });
+// // });
 
-function scrollHandler() {
-  const distanceToBottom = document.body.getBoundingClientRect().bottom;
+// // PERFECT event delegation pattern!!! ->
+// list.addEventListener("click", function (e) {
+//   // console.log(e.currentTarget);
+//   // e.target.classList.toggle("highlight");
+//   e.target.closest("li").classList.toggle("highlight");
+//   // form.submit();
+//   button.click();
+//   console.log(this);
+// });
 
-  if (distanceToBottom < document.documentElement.clientHeight + 150) {
-    const newDataElement = document.createElement("div");
-    curElementNumber++;
-    newDataElement.innerHTML = `<p>Element ${curElementNumber}</p>`;
-    document.body.append(newDataElement);
-  }
-}
+// // Infinite scroll example ->
+// let curElementNumber = 0;
 
-window.addEventListener("scroll", scrollHandler);
+// function scrollHandler() {
+//   const distanceToBottom = document.body.getBoundingClientRect().bottom;
+
+//   if (distanceToBottom < document.documentElement.clientHeight + 150) {
+//     const newDataElement = document.createElement("div");
+//     curElementNumber++;
+//     newDataElement.innerHTML = `<p>Element ${curElementNumber}</p>`;
+//     document.body.append(newDataElement);
+//   }
+// }
+
+// window.addEventListener("scroll", scrollHandler);

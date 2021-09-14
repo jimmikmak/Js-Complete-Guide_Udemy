@@ -106,9 +106,14 @@ class ProjectItem {
   }
 
   connectDrag() {
+    const item = document.getElementById(this.id);
     document.getElementById(this.id).addEventListener("dragstart", (e) => {
       e.dataTransfer.setData("text/plain", this.id);
       e.dataTransfer.effectAllowed = "move";
+    });
+
+    item.addEventListener("dragend", (e) => {
+      console.log(e);
     });
   }
 
@@ -173,6 +178,19 @@ class ProjectList {
       if (e.relatedTarget.closest(`#${this.type}-projects ul`) !== list) {
         list.parentElement.classList.remove("droppable");
       }
+    });
+
+    list.addEventListener("drop", (e) => {
+      const prjId = e.dataTransfer.getData("text/plain");
+      if (this.projects.find((p) => p.id === prjId)) {
+        return;
+      }
+      document
+        .getElementById(prjId)
+        .querySelector("button:last-of-type")
+        .click();
+      list.parentElement.classList.remove("droppable");
+      // e.preventDefault(); // not required
     });
   }
 
