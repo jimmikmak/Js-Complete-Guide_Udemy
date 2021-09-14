@@ -50,11 +50,12 @@ div.addEventListener(
   true
 );
 
-button.addEventListener("click", (e) => {
+button.addEventListener("click", function (e) {
   e.stopPropagation();
   // e.stopImmediatePropagation();
   console.log("CLICKED BUTTON");
   console.log(e);
+  console.log(this);
 });
 
 const listItems = document.querySelectorAll("li");
@@ -67,12 +68,13 @@ const list = document.querySelector("ul");
 // });
 
 // PERFECT event delegation pattern!!! ->
-list.addEventListener("click", (e) => {
+list.addEventListener("click", function (e) {
   // console.log(e.currentTarget);
   // e.target.classList.toggle("highlight");
   e.target.closest("li").classList.toggle("highlight");
   // form.submit();
   button.click();
+  console.log(this);
 });
 
 // Infinite scroll example ->
