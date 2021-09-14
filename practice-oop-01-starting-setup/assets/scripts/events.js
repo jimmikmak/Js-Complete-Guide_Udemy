@@ -42,7 +42,7 @@ form.addEventListener("submit", (e) => {
 const div = document.querySelector("div");
 
 div.addEventListener(
-  "click",
+  "mouseenter",
   (e) => {
     console.log("CLICKED DIV");
     console.log(e);
@@ -50,11 +50,27 @@ div.addEventListener(
   true
 );
 
-button.addEventListener("click", (e) => {
+button.addEventListener("mouseenter", (e) => {
   e.stopPropagation();
   // e.stopImmediatePropagation();
   console.log("CLICKED BUTTON");
   console.log(e);
+});
+
+const listItems = document.querySelectorAll("li");
+const list = document.querySelector("ul");
+
+// listItems.forEach((listItem) => {
+//   listItem.addEventListener("click", (e) => {
+//     e.target.classList.toggle("highlight");
+//   });
+// });
+
+// PERFECT event delegation pattern!!! ->
+list.addEventListener("click", (e) => {
+  // console.log(e.currentTarget);
+  // e.target.classList.toggle("highlight");
+  e.target.closest("li").classList.toggle("highlight");
 });
 
 // Infinite scroll example ->
