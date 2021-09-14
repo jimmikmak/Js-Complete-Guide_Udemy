@@ -24,13 +24,20 @@ const boundFn = buttonClickHandler.bind(this);
 //   button.removeEventListener("click", buttonClickHandler);
 // }, 2000);
 
-buttons.forEach((btn) => {
-  btn.addEventListener("mouseenter", buttonClickHandler);
-});
+// buttons.forEach((btn) => {
+//   btn.addEventListener("mouseenter", buttonClickHandler);
+// });
 
 // window.addEventListener("scroll", (e) => {
 //   console.log(e);
 // });
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log(e);
+});
 
 // Infinite scroll example ->
 let curElementNumber = 0;
