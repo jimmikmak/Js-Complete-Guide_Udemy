@@ -50,7 +50,7 @@ div.addEventListener(
   true
 );
 
-button.addEventListener("mouseenter", (e) => {
+button.addEventListener("click", (e) => {
   e.stopPropagation();
   // e.stopImmediatePropagation();
   console.log("CLICKED BUTTON");
@@ -71,6 +71,8 @@ list.addEventListener("click", (e) => {
   // console.log(e.currentTarget);
   // e.target.classList.toggle("highlight");
   e.target.closest("li").classList.toggle("highlight");
+  // form.submit();
+  button.click();
 });
 
 // Infinite scroll example ->
