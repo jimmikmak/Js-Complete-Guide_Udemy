@@ -83,3 +83,45 @@ const powerOf = (x, n) => {
 };
 
 console.log(powerOf(2, 3)); // 2 * 2 * 2
+
+const myself = {
+  name: "James",
+  friends: [
+    {
+      name: "Clem",
+      friends: [
+        {
+          name: "Al",
+          friends: [
+            {
+              name: "Steve",
+            },
+            {
+              name: "Patrick",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Edwina",
+    },
+  ],
+};
+
+const getFriendNames = (person) => {
+  const collectedNames = [];
+
+  if (!person.friends) {
+    return [];
+  }
+
+  for (const friend of person.friends) {
+    collectedNames.push(friend.name);
+    collectedNames.push(...getFriendNames(friend));
+  }
+
+  return collectedNames;
+};
+
+console.log(getFriendNames(myself));
