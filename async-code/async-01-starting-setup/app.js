@@ -7,7 +7,9 @@ const getPosition = (opts) => {
       (success) => {
         resolve(success);
       },
-      (error) => {},
+      (error) => {
+        reject(error);
+      },
       opts
     );
   });
@@ -23,12 +25,16 @@ const setTimer = (duration) => {
   return promise;
 };
 
-function trackUserHandler() {
+const trackUserHandler = () => {
   let positionData;
   getPosition()
     .then((posData) => {
       positionData = posData;
       return setTimer(2000);
+    })
+    .catch((err) => {
+      console.log(err);
+      return "carry on...";
     })
     .then((data) => {
       console.log(data, positionData);
@@ -37,7 +43,7 @@ function trackUserHandler() {
     console.log("Timer done!");
   });
   console.log("Getting position...");
-}
+};
 
 button.addEventListener("click", trackUserHandler);
 
