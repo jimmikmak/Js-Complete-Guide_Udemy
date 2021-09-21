@@ -25,7 +25,10 @@ const sendHttpRequest = (method, url, data) => {
   // });
 
   // return promise;
-  return fetch(url).then((response) => {
+  return fetch(url, {
+    method: method,
+    body: JSON.stringify(data),
+  }).then((response) => {
     return response.json();
   });
 };
