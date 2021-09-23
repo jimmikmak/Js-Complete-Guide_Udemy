@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "build:dev": "webpack-dev-server"
   },
   "author": "James McCarron",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^7.32.0",
     "webpack": "^4.46.0",
-    "webpack-cli": "^4.8.0"
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.2.1"
   }
 }
