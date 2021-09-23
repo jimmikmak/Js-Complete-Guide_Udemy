@@ -8,11 +8,10 @@ module.exports = {
     path: path.resolve(__dirname, "assets", "scripts"),
     publicPath: "assets/scripts/",
   },
+  devtool: "cheap-module-eval-source-map",
   // devServer: {
-  //   port: 3000,
+  //   contentBase: "./",
+  //   port: 8080,
   //   writeToDisk: true,
-  //   proxy: {
-  //     "/": "http://localhost:8080",
-  //   },
   // },
 };
