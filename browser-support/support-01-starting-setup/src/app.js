@@ -1,4 +1,4 @@
-import "core-js";
+// import "core-js/features/promise";
 
 const button = document.querySelector("button");
 const textParagraph = document.querySelector("p");
