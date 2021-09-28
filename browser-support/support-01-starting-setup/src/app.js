@@ -1,4 +1,5 @@
-// import "core-js/features/promise";
+// import "core-js/stable";
+// import "regenerator-runtime/runtime";
 
 const button = document.querySelector("button");
 const textParagraph = document.querySelector("p");
