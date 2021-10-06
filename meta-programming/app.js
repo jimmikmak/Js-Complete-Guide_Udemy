@@ -7,6 +7,7 @@ const user = {
   [uid]: "p1",
   name: "James",
   age: 43,
+  [Symbol.toStringTag]: "User",
 };
 
 user[uid] = "p3";
@@ -14,6 +15,6 @@ user[uid] = "p3";
 // 'App land' -> Using the library
 user.id = "p2"; // this should not be possible!
 
-console.log(user);
-
+console.log(user[Symbol("uid")]);
 console.log(Symbol("uid") === Symbol("uid"));
+console.log(user.toString());
