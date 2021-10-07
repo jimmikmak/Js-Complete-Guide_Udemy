@@ -67,3 +67,26 @@ console.log([...company]);
 // console.log(it.next());
 // console.log(it.next());
 // console.log(it.next());
+
+const persons = ["James", "Asuka"];
+console.log(persons);
+
+// ---
+
+const course = {
+  title: "Javascript - The Complete Guide",
+};
+
+Reflect.setPrototypeOf(course, {
+  toString() {
+    return this.title;
+  },
+});
+
+Reflect.deleteProperty(course, "title");
+
+// Object.deleteProperty(course, "title");
+
+// delete course.title;
+
+console.log(course);
