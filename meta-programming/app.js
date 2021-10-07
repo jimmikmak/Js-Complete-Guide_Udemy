@@ -58,6 +58,8 @@ for (const employee of company) {
   console.log(employee);
 }
 
+console.log([...company]);
+
 // const it = company.getEmployee();
 
 // console.log(it.next());
